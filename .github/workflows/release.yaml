@@ -1,4 +1,4 @@
-name: 'Release: new CLI version using JReleaser'
+name: 'Expose missing previous versions'
 
 on:
   push:
