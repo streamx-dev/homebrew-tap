@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  expose-missing-previous-versions:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
