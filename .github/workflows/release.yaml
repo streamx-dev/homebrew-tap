@@ -26,7 +26,7 @@ jobs:
       - name: Update homebrew versopms
         run: bash ./scripts/update_versions.sh Formula
 
-      - name: Git commit
+      - name: Git push
         run: |
           git push
 
