@@ -20,7 +20,7 @@ do
 
     curl -s "https://raw.githubusercontent.com/streamx-dev/homebrew-tap/refs/tags/$VERSION/Formula/streamx.rb" > $FILENAME
 
-    VERSION_IN_CLASS_NAME=$(echo "$VERSION" | sed 's/[^a-zA-Z0-9]/o/g')
+    VERSION_IN_CLASS_NAME=$(echo "$VERSION" | sed 's/[^a-zA-Z0-9]//g')
     sed -i "s/class Streamx/class StreamxAT$VERSION_IN_CLASS_NAME/g" "$FILENAME"
   fi
 done
