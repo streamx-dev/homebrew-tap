@@ -24,7 +24,7 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
 
       - name: Update homebrew versopms
-        run: bash ./scripts/update_versions.sh
+        run: bash ./scripts/update_versions.sh Formula
 
       - name: Git commit
         run: |
