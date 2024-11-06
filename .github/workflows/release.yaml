@@ -1,0 +1,28 @@
+name: 'Release: new CLI version using JReleaser'
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github.actions@streamx.dev"
+          git config --global user.name "${GITHUB_ACTOR}"
+
+      - name: Update homebrew versopms
+        run: ./scripts/update_versions.sh
+
