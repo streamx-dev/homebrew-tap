@@ -1,4 +1,4 @@
-name: 'Expose missing previous versions'
+name: 'Expose missing previous versions '
 
 on:
   push:
