@@ -30,7 +30,7 @@ done
 if [ $UPDATED == 'true' ]; then
   echo "Committing changes..."
   git add ./streamx@*.rb
-  git commit -am "Update homebrew formulas."
+  git commit -m "Update homebrew formulas."
 else
   echo "No file updated."
 fi
