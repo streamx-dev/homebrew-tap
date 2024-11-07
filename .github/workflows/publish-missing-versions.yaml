@@ -1,0 +1,32 @@
+name: 'Expose missing previous versions'
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  expose-missing-previous-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github.actions@streamx.dev"
+          git config --global user.name "${GITHUB_ACTOR}"
+
+      - name: Expose previous versions
+        run: bash ./scripts/expose_previous_versions.sh Formula
+
+      - name: Git push
+        run: |
+          git push
+
